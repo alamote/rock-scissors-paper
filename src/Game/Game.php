@@ -67,7 +67,7 @@ class Game
                 'vs',
                 sprintf('[%s]', $this->secondPlayer()->getName()),
                 $this->secondPlayer()->getCase($i)::$name,
-                '-'
+                '->'
             ];
             if ($winner) {
                 $winner->addPoint();
@@ -79,9 +79,9 @@ class Game
         }
         $winner = $this->getGameWinner();
         if ($winner) {
-            echo sprintf("%s wins (%s %d:%d %s).%s", $winner->getName(), $this->firstPlayer()->getName(), $this->firstPlayer()->getPoints(), $this->secondPlayer()->getPoints(), $this->secondPlayer()->getName(), PHP_EOL);
+            echo PHP_EOL . sprintf("%s wins (%s %d:%d %s).%s", $winner->getName(), $this->firstPlayer()->getName(), $this->firstPlayer()->getPoints(), $this->secondPlayer()->getPoints(), $this->secondPlayer()->getName(), PHP_EOL);
         } else {
-            echo 'No winner.' . PHP_EOL;
+            echo PHP_EOL . 'No winner.' . PHP_EOL;
         }
     }
 }
